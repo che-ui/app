@@ -1,0 +1,175 @@
+/**
+ * KimiBlog Framework - App Styles
+ * 应用样式
+ */
+
+/* 归档时间线 */
+.kimiblog-archive-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.kimiblog-archive-section {
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 2px solid var(--border-color);
+}
+
+.kimiblog-archive-year-month {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  margin-left: -1.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.kimiblog-archive-year-month::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+}
+
+.kimiblog-archive-posts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.kimiblog-archive-post {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 0;
+}
+
+.kimiblog-archive-post-date {
+  font-size: 0.875rem;
+  color: var(--text-tertiary);
+  min-width: 3rem;
+}
+
+.kimiblog-archive-post-title {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 0.9375rem;
+  transition: color 0.15s ease;
+}
+
+.kimiblog-archive-post-title:hover {
+  color: var(--primary-color);
+}
+
+/* 搜索结果 */
+.kimiblog-search-results {
+  margin-top: 1.5rem;
+}
+
+.kimiblog-search-info {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* 内容区域 */
+.kimiblog-content {
+  min-width: 0;
+}
+
+/* 加载动画 */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.kimiblog-loading {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--border-color);
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+/* 空状态 */
+.kimiblog-empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-secondary);
+}
+
+.kimiblog-empty-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.kimiblog-empty-text {
+  font-size: 1rem;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+}
+
+/* 选中文字样式 */
+::selection {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: var(--text-primary);
+}
+
+/* 焦点样式 */
+:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* 打印样式 */
+@media print {
+  .kimiblog-header,
+  .kimiblog-sidebar,
+  .kimiblog-footer,
+  .kimiblog-pagination {
+    display: none !important;
+  }
+  
+  .kimiblog-main {
+    grid-template-columns: 1fr !important;
+    padding: 0 !important;
+  }
+  
+  .kimiblog-post {
+    border: none !important;
+    padding: 0 !important;
+  }
+}
