@@ -1,0 +1,766 @@
+/**
+ * KimiBlog Framework - Default Theme Styles
+ * 默认主题样式
+ */
+
+/* CSS Variables */
+:root {
+  /* Colors */
+  --primary-color: #3b82f6;
+  --primary-hover: #2563eb;
+  --secondary-color: #64748b;
+  --accent-color: #8b5cf6;
+  
+  /* Background */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  
+  /* Text */
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --text-tertiary: #94a3b8;
+  
+  /* Border */
+  --border-color: #e2e8f0;
+  --border-light: #f1f5f9;
+  
+  /* Shadow */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  
+  /* Typography */
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 350ms ease;
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+  
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-tertiary: #94a3b8;
+  
+  --border-color: #334155;
+  --border-light: #1e293b;
+}
+
+/* Base Styles */
+.kimiblog {
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Header */
+.kimiblog-header {
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.kimiblog-header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-md) var(--spacing-xl);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.kimiblog-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.kimiblog-brand-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.kimiblog-brand-subtitle {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.kimiblog-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.kimiblog-nav-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.kimiblog-nav-link:hover {
+  color: var(--primary-color);
+}
+
+/* Main Content */
+.kimiblog-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-2xl) var(--spacing-xl);
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: var(--spacing-2xl);
+}
+
+.kimiblog-main--no-sidebar {
+  grid-template-columns: 1fr;
+}
+
+/* Post List */
+.kimiblog-post-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.kimiblog-post-card {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  transition: box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+
+.kimiblog-post-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-color);
+}
+
+.kimiblog-post-card-header {
+  margin-bottom: var(--spacing-md);
+}
+
+.kimiblog-post-card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.3;
+}
+
+.kimiblog-post-card-title a {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.kimiblog-post-card-title a:hover {
+  color: var(--primary-color);
+}
+
+.kimiblog-post-card-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  flex-wrap: wrap;
+}
+
+.kimiblog-post-card-meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.kimiblog-post-card-excerpt {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-md);
+}
+
+.kimiblog-post-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.kimiblog-post-card-tags {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.kimiblog-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.kimiblog-tag:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.kimiblog-post-card-readmore {
+  color: var(--primary-color);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  transition: color var(--transition-fast);
+}
+
+.kimiblog-post-card-readmore:hover {
+  color: var(--primary-hover);
+}
+
+/* Post Detail */
+.kimiblog-post {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-2xl);
+}
+
+.kimiblog-post-header {
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-xl);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.kimiblog-post-title {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-md);
+  color: var(--text-primary);
+}
+
+.kimiblog-post-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  flex-wrap: wrap;
+}
+
+.kimiblog-post-content {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-primary);
+}
+
+.kimiblog-post-content h1,
+.kimiblog-post-content h2,
+.kimiblog-post-content h3,
+.kimiblog-post-content h4,
+.kimiblog-post-content h5,
+.kimiblog-post-content h6 {
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.kimiblog-post-content h1 { font-size: 1.75rem; }
+.kimiblog-post-content h2 { font-size: 1.5rem; }
+.kimiblog-post-content h3 { font-size: 1.25rem; }
+.kimiblog-post-content h4 { font-size: 1.125rem; }
+
+.kimiblog-post-content p {
+  margin-bottom: var(--spacing-md);
+}
+
+.kimiblog-post-content a {
+  color: var(--primary-color);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition-fast);
+}
+
+.kimiblog-post-content a:hover {
+  border-bottom-color: var(--primary-color);
+}
+
+.kimiblog-post-content ul,
+.kimiblog-post-content ol {
+  margin-bottom: var(--spacing-md);
+  padding-left: var(--spacing-lg);
+}
+
+.kimiblog-post-content li {
+  margin-bottom: var(--spacing-xs);
+}
+
+.kimiblog-post-content blockquote {
+  margin: var(--spacing-lg) 0;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-left: 4px solid var(--primary-color);
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.kimiblog-post-content code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background-color: var(--bg-tertiary);
+  border-radius: var(--radius-sm);
+  color: var(--accent-color);
+}
+
+.kimiblog-post-content pre {
+  margin: var(--spacing-lg) 0;
+  padding: var(--spacing-lg);
+  background-color: #1e293b;
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+}
+
+.kimiblog-post-content pre code {
+  background-color: transparent;
+  padding: 0;
+  color: #e2e8f0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.kimiblog-post-content table {
+  width: 100%;
+  margin: var(--spacing-lg) 0;
+  border-collapse: collapse;
+}
+
+.kimiblog-post-content th,
+.kimiblog-post-content td {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--border-color);
+  text-align: left;
+}
+
+.kimiblog-post-content th {
+  background-color: var(--bg-secondary);
+  font-weight: 600;
+}
+
+.kimiblog-post-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  margin: var(--spacing-lg) 0;
+}
+
+/* Sidebar */
+.kimiblog-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.kimiblog-widget {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+}
+
+.kimiblog-widget-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.kimiblog-widget-content {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+/* Author Widget */
+.kimiblog-author {
+  text-align: center;
+}
+
+.kimiblog-author-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto var(--spacing-md);
+  object-fit: cover;
+  border: 3px solid var(--border-color);
+}
+
+.kimiblog-author-name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+  color: var(--text-primary);
+}
+
+.kimiblog-author-bio {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-md);
+}
+
+.kimiblog-author-stats {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-lg);
+}
+
+.kimiblog-author-stat {
+  text-align: center;
+}
+
+.kimiblog-author-stat-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.kimiblog-author-stat-label {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+}
+
+/* Tag Cloud */
+.kimiblog-tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.kimiblog-tag-cloud .kimiblog-tag {
+  font-size: 0.8125rem;
+}
+
+/* Archive List */
+.kimiblog-archive-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.kimiblog-archive-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-sm) 0;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-light);
+  transition: color var(--transition-fast);
+}
+
+.kimiblog-archive-item:last-child {
+  border-bottom: none;
+}
+
+.kimiblog-archive-item:hover {
+  color: var(--primary-color);
+}
+
+.kimiblog-archive-item-count {
+  font-size: 0.75rem;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background-color: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  color: var(--text-tertiary);
+}
+
+/* Pagination */
+.kimiblog-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-2xl);
+}
+
+.kimiblog-pagination-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 var(--spacing-md);
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.kimiblog-pagination-btn:hover:not(:disabled) {
+  background-color: var(--bg-secondary);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.kimiblog-pagination-btn--active {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+}
+
+.kimiblog-pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Footer */
+.kimiblog-footer {
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  padding: var(--spacing-2xl) var(--spacing-xl);
+  margin-top: var(--spacing-2xl);
+}
+
+.kimiblog-footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.kimiblog-footer-copyright {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.kimiblog-footer-powered {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+}
+
+.kimiblog-footer-powered a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+/* Page Header */
+.kimiblog-page-header {
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.kimiblog-page-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.kimiblog-page-desc {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+}
+
+/* Category/Tag List */
+.kimiblog-taxonomy-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.kimiblog-taxonomy-card {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  transition: box-shadow var(--transition-normal);
+}
+
+.kimiblog-taxonomy-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.kimiblog-taxonomy-card-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+}
+
+.kimiblog-taxonomy-card-title a {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.kimiblog-taxonomy-card-title a:hover {
+  color: var(--primary-color);
+}
+
+.kimiblog-taxonomy-card-count {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+/* Search */
+.kimiblog-search {
+  margin-bottom: var(--spacing-xl);
+}
+
+.kimiblog-search-input {
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  font-size: 1rem;
+  color: var(--text-primary);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.kimiblog-search-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.kimiblog-search-input::placeholder {
+  color: var(--text-tertiary);
+}
+
+/* TOC */
+.kimiblog-toc {
+  font-size: 0.875rem;
+}
+
+.kimiblog-toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.kimiblog-toc-item {
+  margin-bottom: var(--spacing-xs);
+}
+
+.kimiblog-toc-item--level-2 {
+  padding-left: var(--spacing-md);
+}
+
+.kimiblog-toc-item--level-3 {
+  padding-left: var(--spacing-lg);
+}
+
+.kimiblog-toc-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  display: block;
+  padding: var(--spacing-xs) 0;
+  transition: color var(--transition-fast);
+}
+
+.kimiblog-toc-link:hover {
+  color: var(--primary-color);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .kimiblog-main {
+    grid-template-columns: 1fr;
+  }
+  
+  .kimiblog-sidebar {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .kimiblog-header-inner {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+  }
+  
+  .kimiblog-nav {
+    gap: var(--spacing-md);
+  }
+  
+  .kimiblog-main {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+  
+  .kimiblog-post {
+    padding: var(--spacing-lg);
+  }
+  
+  .kimiblog-post-title {
+    font-size: 1.5rem;
+  }
+  
+  .kimiblog-post-card {
+    padding: var(--spacing-lg);
+  }
+  
+  .kimiblog-taxonomy-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.kimiblog-fade-in {
+  animation: fadeIn 0.3s ease forwards;
+}
