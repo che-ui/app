@@ -1,6 +1,6 @@
-# KimiBlog Framework
+# CHESBLOG Framework
 
-> 🚀 一个类似 Hexo 的轻量级博客框架，基于 React + TypeScript 构建。
+> 🚀 一个类似 WSLpress、Typace 的轻量级博客框架，基于 React + TypeScript 构建。
 
 [![React](https://img.shields.io/badge/React-18.0+-61DAFB?logo=react&logoColor=white)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
@@ -243,7 +243,7 @@ rsync -avz dist/ user@server:/var/www/blog/
 
 ## 📄 许可证
 
-[MIT](LICENSE) License © 2024 KimiBlog
+[GPL v3](LICENSE) License © 2024 CHESBLOG
 
 ---
 
