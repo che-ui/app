@@ -5,7 +5,7 @@
 [![React](https://img.shields.io/badge/React-18.0+-61DAFB?logo=react&logoColor=white)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-5.0+-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/d20c8f56-5bb0-41d5-b4f6-7f5cc4e2c354/deploy-status)](https://app.netlify.com/projects/chesblog/deploys)
 
 [在线演示](https://kimiblog-demo.vercel.app) · [文档](./docs/FRAMEWORK.md) · [更新日志](./CHANGELOG.md)
