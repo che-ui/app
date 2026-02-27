@@ -1,4 +1,5 @@
-# CHESBLOG Framework [![GitHub Stars](https://img.shields.io/github/stars/che-ui/app?style=social)](https://github.com/che-ui/app/stargazers)
+# CHESBLOG Framework [![GitHub Stars](https://img.shields.io/github/stars/che-ui/app?style=social)](https://github.com/che-ui/app/stargazers) [![GitHub Forks](https://img.shields.io/github/forks/che-ui/app?style=social)](https://github.com/che-ui/app/network/members)
+
 
 > 🚀 一个类似 WSLpress、Typace 的轻量级博客框架，基于 React + TypeScript 构建。
 
@@ -10,7 +11,6 @@
 [![Repo Size](https://img.shields.io/github/repo-size/che-ui/app)](https://github.com/che-ui/app)
 [![Top Language](https://img.shields.io/github/languages/top/che-ui/app)](https://github.com/che-ui/app)
 [![Last Commit](https://img.shields.io/github/last-commit/che-ui/app)](https://github.com/che-ui/app/commits/main)
-[![GitHub Forks](https://img.shields.io/github/forks/che-ui/app?style=social)](https://github.com/che-ui/app/network/members)
 
 [在线演示](https://kimiblog-demo.vercel.app) · [文档](./docs/FRAMEWORK.md) · [更新日志](./CHANGELOG.md)
 
